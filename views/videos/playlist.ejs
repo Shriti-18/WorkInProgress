@@ -1,0 +1,40 @@
+<%- include ('../partials/header') %>
+<section class="container-one">
+    <nav class="nav-one">
+        <p class="block block-front">SMART SEARCH</p>
+        <div class="block block-mid">
+            <p class="link">Home</p>
+            <p class="link">Gallery</p>
+            <p class="link">Guide</p>
+        </div>
+        <p class="block block-last">Signed In As Harry</p>
+    </nav>
+    <nav class="nav-two">
+        <p>Smart Search</p>
+        <form class="form-inline" action="/home" method="POST">
+            <input class="form-control mr-sm-2" type="search" name="keyword" placeholder="search" aria-label="Search">
+            <button class="btn btn-outline-success my-sm-0" type="submit"><img class="titlebox home-image " src="/assets/iconfinder_-_Magnifier-Search-Zoom-_3844467.png"></button>
+        </form>
+    </nav>
+    <div class="add-playlist container">
+        <a href="/home/new"><span class="dot">+</span></a>
+    </div>
+    <div class="container box-playlists">
+        <% playlist.forEach(function(newplaylist){%>
+            <div class="playlist-new">
+                <div class="box-playlist playlist-img">
+                    <img src='<%= newplaylist.image %>' alt="no image">
+                </div>
+                <div class="box-playlist new-playlist">
+                        <p class="newplaylist newplaylist-title"><%=newplaylist.name%></p>
+                        <p class="newplaylist newplaylist-date"><%=moment(newplaylist.date).format("YY:MM:DD")%></p>
+                        <p class="newplaylist newplaylist-description"><%=newplaylist.description%></p>
+                        <button href="" class="playlist-btn btn-secondary">view</button>
+                </div>
+            </div>
+        <%})%>
+
+    </div>
+</section>
+<%- include ('../partials/footer') %>
+

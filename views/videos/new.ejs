@@ -1,0 +1,17 @@
+<%- include ('../partials/header') %>
+
+
+  <div class="container-playlist">
+        <h1 class="playlist-header">New Playlist</h1>
+        <div class="playlist-elements">
+          <form class="playlist-form" action="/home" method="post">
+                <input class="form-block form-title" type="text" name="name" placeholder="name">
+                <input class="form-block form-image" type="text" name="image" placeholder="image url">
+                <input class="form-block form-date" type="date" name="date" placeholder="cost" >
+                <input class="form-block form-desc" type="text" name="description" placeholder="description">
+                <button class="form-block form-play-btn btn-secondary">Submit</button>
+          </form>
+        </div>
+        <a href="/home">Go Back</a>
+  </div>
+  <%- include ('../partials/footer') %>
